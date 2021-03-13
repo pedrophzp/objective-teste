@@ -1,0 +1,86 @@
+@import "../../styles/colors.scss";
+
+.regular{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $smoke-color;
+}
+
+.title{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $dark-smoke-color;
+}
+
+.subtitle{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: $dark-smoke-color;
+}
+
+.regularWhite{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: $white-color;
+}
+
+.number{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: $dark-smoke-color;
+}
+
+.description{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $dark-smoke-color;
+}
+
+.name{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $dark-smoke-color;
+}
+
+.input{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: $dark-smoke-color;
+    font-style: italic;
+}
+
+.infoCandidate{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $dark-smoke-color;
+}
+
+.infoCandidateBold{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: $dark-smoke-color;
+}
+
+.menu{
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 10px;
+    color: $dark-smoke-color;
+}
+
