@@ -3,7 +3,7 @@ import Button from "../button";
 
 import styles from "./index.module.scss";
 
-const Pagination = ({ page, total, onChange }) => {
+const Pagination = ({ page, total, onChange, className, visibleButtons }) => {
   const [totalPages, setTotalPages] = useState(Math.ceil(total / 10));
 
   useEffect(() => {
@@ -13,12 +13,14 @@ const Pagination = ({ page, total, onChange }) => {
   }, [total]);
 
   let rows = [];
-  for (let i = 0; i < totalPages + 1; i++) {
+  for (let i = 0; i < totalPages; i++) {
     rows.push(i);
   }
 
+  console.log(page === totalPages - 1)
+
   return (
-    <div className={`${styles.container} ${styles.containerPagination}`}>
+    <div className={`${styles.container} ${styles.containerPagination} ${className}`}>
       {totalPages > 1 && (
         <>
           <div
@@ -52,16 +54,18 @@ const Pagination = ({ page, total, onChange }) => {
                     : page === 1
                     ? page - 1
                     : page === totalPages - 1
-                    ? page - 3
-                    : page - 2
-                  : page - 4,
+                    ? page - (visibleButtons === 3 ? 2 : 4)
+                    : page === totalPages - 2 
+                    ? page - (visibleButtons === 3 ? 1 : 3)
+                    : page - (visibleButtons === 3 ? 1 : 2)
+                  : page - (visibleButtons - 1),
                 page === totalPages - 1
                   ? page + 2
                   : page < 1
-                  ? page + 5
+                  ? page + visibleButtons
                   : page < 2
-                  ? page + 4
-                  : page + 3
+                  ? page + (visibleButtons - 1)
+                  : page + (visibleButtons === 3 ? visibleButtons - 1 : visibleButtons - 2)
               )
               ?.map((number, index) => (
                 <Button
@@ -79,7 +83,7 @@ const Pagination = ({ page, total, onChange }) => {
           <div
             className={`${styles.container} ${styles.containerRightPagination}`}
           >
-            {page < totalPages && (
+            {page < totalPages - 1 && (
               <Button
                 className={styles.paginationBtnArrow}
                 onClick={() => onChange(page + 1)}
@@ -87,10 +91,10 @@ const Pagination = ({ page, total, onChange }) => {
                 {">"}
               </Button>
             )}
-            {page < totalPages - 1 && (
+            {page < totalPages - 2 && (
               <Button
                 className={styles.paginationBtnArrow}
-                onClick={() => onChange(totalPages)}
+                onClick={() => onChange(totalPages - 1)}
               >
                 {">>"}
               </Button>
