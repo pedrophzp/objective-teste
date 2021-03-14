@@ -27,8 +27,8 @@ ReactDOM.render(
       <Navbar />
       <Router history={history}>
         <Switch>
-          <Route path="*" component={Home} />
           <Route path="/detail/:id" component={Detail} />
+          <Route path="*" component={Home} />
         </Switch>
       </Router>
     </div>
