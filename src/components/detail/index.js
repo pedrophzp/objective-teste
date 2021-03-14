@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import Loader from "../components/loader";
-import { actionCreators } from "../reducers/characters";
-import { Link, useParams } from "react-router-dom";
-import Text from "../components/text";
+import Loader from "../loader";
+import { actionCreators } from "../../reducers/characters";
+import Text from "../text";
 
-import styles from "./detail.module.scss";
-import Button from "../components/button";
+import styles from "./index.module.scss";
+import Button from "../button";
 
 const mapStateToProps = (store) => ({
   loading: store.charactersReducer.loading,
@@ -14,10 +13,8 @@ const mapStateToProps = (store) => ({
 });
 
 const Detail = (props) => {
-  const { id } = useParams();
-
   useEffect(() => {
-    props.dispatch(actionCreators.getCharacterInfo(id));
+    props.dispatch(actionCreators.getCharacterInfo(props.id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -130,9 +127,12 @@ const Detail = (props) => {
             </Text>
           )}
 
-          <Link className={styles.containerBtnBack} to={"/"}>
-            <Button className={styles.btnBack}>Voltar</Button>
-          </Link>
+          <Button
+            onClick={() => props.onClickBtnBack(undefined)}
+            className={styles.btnBack}
+          >
+            Voltar
+          </Button>
         </div>
       )}
       {props.loading && <Loader />}

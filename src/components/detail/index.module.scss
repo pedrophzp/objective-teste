@@ -1,4 +1,4 @@
-@import "../styles/colors.scss";
+@import "../../styles/colors.scss";
 
 .container {
   background-color: $dark-snow-color;
@@ -54,9 +54,6 @@
   grid-gap: 4px;
 }
 
-.containerBtnBack {
-  margin: 0 auto 24px;
-}
 
 .btnBack {
   width: 65px;
@@ -65,6 +62,7 @@
   border-radius: 4px;
   background-color: $blue-color;
   border: 1px solid $blue-color;
+  margin: 0 auto 24px;
 }
 
 @media (max-width: 767px) {
