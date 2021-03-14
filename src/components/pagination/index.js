@@ -7,8 +7,10 @@ const Pagination = ({ page, total, onChange, className, visibleButtons }) => {
   const [totalPages, setTotalPages] = useState(Math.ceil(total / 10));
 
   useEffect(() => {
-    setTotalPages(Math.ceil(total / 10));
-    onChange(0);
+    if(totalPages !== (Math.ceil(total / 10)) ){
+      setTotalPages(Math.ceil(total / 10));
+      onChange(0);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total]);
 

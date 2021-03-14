@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Text from "../text";
 
 import styles from "./index.module.scss";
 
-const Card = ({ id, picture, name, series, events }) => {
+const Card = ({ id, picture, name, series, events, onSelect}) => {
   return (
-    <Link to={`/detail/${id}`} className={styles.container}>
+    <div id={id} onClick={() => onSelect(id)} className={styles.container}>
       <img alt={`${name}`} className={styles.picture} src={picture} />
       <Text type={"name"}>{name}</Text>
       <div className={`${styles.containerDescription} hideMobile`}>
@@ -23,7 +22,7 @@ const Card = ({ id, picture, name, series, events }) => {
           </Text>
         ))}
       </div>
-    </Link>
+    </div>
   );
 };
 

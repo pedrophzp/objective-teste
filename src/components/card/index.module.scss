@@ -1,6 +1,7 @@
 @import "../../styles/colors.scss";
 
 .container {
+  cursor: pointer;
   width: 100%;
   height: 88px;
   background-color: $white-color;
@@ -13,6 +14,7 @@
   grid-template-columns: auto 1fr 1fr 1fr;
   grid-gap: 24px;
   text-decoration: none;
+  border: none;
   &:hover {
     opacity: 0.7;
   }
