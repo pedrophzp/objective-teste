@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Route, Switch } from "react-router";
-import history from "./utils/history";
 
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -13,7 +11,6 @@ import Navbar from "./components/navbar";
 
 //Pages
 import Home from "./pages/home";
-import Detail from "./pages/detail";
 
 import "./index.css";
 
@@ -25,12 +22,7 @@ ReactDOM.render(
       style={{ display: "grid", gridTemplateRows: "auto 1fr", height: "100vh" }}
     >
       <Navbar />
-      <Router history={history}>
-        <Switch>
-          <Route path="/detail/:id" component={Detail} />
-          <Route path="*" component={Home} />
-        </Switch>
-      </Router>
+      <Home/>
     </div>
   </Provider>,
   document.getElementById("root")
