@@ -33,13 +33,13 @@
 .paginationBtn {
     height: 32px;
     width: 40px;
-    color: #555555;
-    background-color: #F5F5F5;
-    border: 1px solid #E5E5E5;
+    color: $dark-smoke-color;
+    background-color: $snow-color;
+    border: 1px solid $dark-snow-color;
 }
 
 .paginationBtnActive {
     color: white;
-    background-color: #167ABC;
-    border-color: #167ABC;
+    background-color: $dark-blue-color;
+    border-color: $dark-blue-color;
   }
