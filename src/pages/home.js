@@ -82,6 +82,15 @@ const Home = (props) => {
         </div>
       </div>
       <Pagination
+        className={"hideDesktop"}
+        visibleButtons={3}
+        page={page}
+        total={props.totalCharacters}
+        onChange={(value) => handleUpdatePage(value)}
+      />
+      <Pagination
+        className={"hideMobile"}
+        visibleButtons={5}
         page={page}
         total={props.totalCharacters}
         onChange={(value) => handleUpdatePage(value)}
