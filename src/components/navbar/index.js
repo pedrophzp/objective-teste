@@ -12,11 +12,11 @@ const Navbar = () => {
         src={ObjectiveLogo}
       />
       <div className={styles.containerCandidate}>
-        <Text className={"infoCandidateBold"}>Pedro Henrique Zagato Pupin</Text>
-        <Text className={"infoCandidate"}>Teste de Front-end</Text>
+        <Text type={"infoCandidateBold"}>Pedro Henrique Zagato Pupin</Text>
+        <Text type={"infoCandidate"}>Teste de Front-end</Text>
       </div>
       <div className={styles.menu}>
-        <Text className={"menu"}>CB</Text>
+        <Text type={"menu"}>CB</Text>
       </div>
     </div>
   );
