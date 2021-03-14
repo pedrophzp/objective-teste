@@ -20,12 +20,32 @@
   padding-bottom: 24px;
 }
 
-.containerCardsTitles{
-    width: 100%;
-    padding: 24px 24px 0 96px;
-    box-sizing: border-box;
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr;
+.containerCardsTitles {
+  width: 100%;
+  padding: 24px 24px 0 96px;
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 24px;
     grid-gap: 24px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .containerInput {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .containerCardsTitles {
+    padding: 8px 24px 0 96px;
+  }
 }

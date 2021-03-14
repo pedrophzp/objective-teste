@@ -41,16 +41,27 @@ const Home = (props) => {
   return (
     <>
       <div className={styles.container}>
-        <Text type={"title"}>Busca de personagens</Text>
+        <Text type={"title"} className={styles.title}>
+          Busca de personagens
+        </Text>
         <div className={styles.containerInput}>
           <Text type={"subtitle"}>Nome do personagem</Text>
-          <Input search ref={inputNameEl} onChange={handleUpdate} />
+          <Input
+            placeholder={"Search"}
+            search
+            ref={inputNameEl}
+            onChange={handleUpdate}
+          />
         </div>
         <div className={styles.containerCards}>
           <div className={styles.containerCardsTitles}>
-            <Text className={"regular"}>Personagem</Text>
-            <Text className={"regular"}>Séries</Text>
-            <Text className={"regular"}>Eventos</Text>
+            <Text type={"regular"}>Personagem</Text>
+            <Text className={"hideMobile"} type={"regular"}>
+              Séries
+            </Text>
+            <Text className={"hideMobile"} type={"regular"}>
+              Eventos
+            </Text>
           </div>
           {!props.loading &&
             props.characters?.map((character, index) => (
@@ -67,9 +78,7 @@ const Home = (props) => {
                 events={character?.events?.items}
               />
             ))}
-          {props.loading && (
-            <Loader/>
-          )}
+          {props.loading && <Loader />}
         </div>
       </div>
       <Pagination
