@@ -9,7 +9,7 @@ const Pagination = ({ page, total, onChange }) => {
   useEffect(() => {
     setTotalPages(Math.ceil(total / 10));
     onChange(0);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total]);
 
   let rows = [];

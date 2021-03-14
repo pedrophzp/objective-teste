@@ -4,9 +4,10 @@ import Search from "../../images/search.svg";
 import styles from "./index.module.scss";
 
 const Input = React.forwardRef(
-  ({ style, children, className, onChange, search }, ref) => (
+  ({ style, children, className, onChange, search, placeholder }, ref) => (
     <div className={styles.container}>
       <input
+        placeholder={placeholder}
         ref={ref}
         onChange={onChange}
         className={`${styles.input} ${className ? styles[className] : ""} ${

@@ -39,7 +39,7 @@ export const actionCreators = {
           type: types.GET_CHARACTERS,
           payload: {
             characters: response.data.data.results,
-            totalCharacters: response.data.data.total
+            totalCharacters: response.data.data.total,
           },
         });
       } else {
