@@ -23,12 +23,15 @@ const Detail = (props) => {
 
   return (
     <div className={styles.container}>
+      <Text type={"title"} className={styles.title}>
+        Detalhes do personagem
+      </Text>
       {!props.loading && (
         <div className={styles.containerCard}>
           {props.character && props.character?.length > 0 && (
             <>
               <div className={styles.cardTitle}>
-                <Text className={"regular"}>Personagem</Text>
+                <Text type={"regular"}>Personagem</Text>
               </div>
               <div className={styles.card} style={{ justifyContent: "start" }}>
                 <img
@@ -41,8 +44,8 @@ const Detail = (props) => {
                   }
                 />
                 <div className={styles.name}>
-                  <Text className={"name"}>{props.character[0]?.name}</Text>
-                  <Text className={"description"}>
+                  <Text type={"name"}>{props.character[0]?.name}</Text>
+                  <Text type={"description"}>
                     {props.character[0]?.description}
                   </Text>
                 </div>
@@ -53,12 +56,12 @@ const Detail = (props) => {
           {props.character[0]?.series?.items?.length > 0 && (
             <>
               <div className={styles.cardTitle}>
-                <Text className={"regular"}>Séries</Text>
+                <Text type={"regular"}>Séries</Text>
               </div>
               <div className={styles.card}>
                 <div className={styles.containerDescription}>
                   {props.character[0]?.series?.items.map((serie, index) => (
-                    <Text key={index} className={"description"}>
+                    <Text type={"description"} key={index}>
                       {serie.name}
                     </Text>
                   ))}
@@ -70,12 +73,12 @@ const Detail = (props) => {
           {props.character[0]?.events?.items?.length > 0 && (
             <>
               <div className={styles.cardTitle}>
-                <Text className={"regular"}>Eventos</Text>
+                <Text type={"regular"}>Eventos</Text>
               </div>
               <div className={styles.card}>
                 <div className={styles.containerDescription}>
                   {props.character[0]?.events?.items.map((event, index) => (
-                    <Text key={index} className={"description"}>
+                    <Text type={"description"} key={index}>
                       {event?.name}
                     </Text>
                   ))}
@@ -87,12 +90,12 @@ const Detail = (props) => {
           {props.character[0]?.comics?.items?.length > 0 && (
             <>
               <div className={styles.cardTitle}>
-                <Text className={"regular"}>Quadrinhos</Text>
+                <Text type={"regular"}>Quadrinhos</Text>
               </div>
               <div className={styles.card}>
                 <div className={styles.containerDescription}>
                   {props.character[0]?.comics?.items.map((event, index) => (
-                    <Text key={index} className={"description"}>
+                    <Text type={"description"} key={index}>
                       {event?.name}
                     </Text>
                   ))}
@@ -104,12 +107,12 @@ const Detail = (props) => {
           {props.character[0]?.stories?.items?.length > 0 && (
             <>
               <div className={styles.cardTitle}>
-                <Text className={"regular"}>Histórias</Text>
+                <Text type={"regular"}>Histórias</Text>
               </div>
               <div className={styles.card}>
                 <div className={styles.containerDescription}>
                   {props.character[0]?.stories?.items.map((event, index) => (
-                    <Text key={index} className={"description"}>
+                    <Text type={"description"} key={index}>
                       {event?.name}
                     </Text>
                   ))}
