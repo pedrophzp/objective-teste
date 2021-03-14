@@ -8,17 +8,17 @@ const Card = ({ id, picture, name, series, events }) => {
   return (
     <Link to={`/detail/${id}`} className={styles.container}>
       <img alt={`${name}`} className={styles.picture} src={picture} />
-      <Text className={"name"}>{name}</Text>
-      <div className={styles.containerDescription}>
+      <Text type={"name"}>{name}</Text>
+      <div className={`${styles.containerDescription} hideMobile`}>
         {series.map((serie, index) => (
-          <Text key={index} className={"description"}>
+          <Text key={index} type={"description"}>
             {serie.name}
           </Text>
         ))}
       </div>
-      <div className={styles.containerDescription}>
+      <div className={`${styles.containerDescription} hideMobile`}>
         {events.map((event, index) => (
-          <Text key={index} className={"description"}>
+          <Text key={index} type={"description"}>
             {event?.name}
           </Text>
         ))}
