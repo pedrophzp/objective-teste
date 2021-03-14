@@ -20,7 +20,6 @@ const Home = (props) => {
   const [name, setName] = useState("");
 
   const inputNameEl = useRef(null);
-  const containerEL = useRef(null);
 
   useEffect(() => {
     props.dispatch(actionCreators.getCharacters(name, page));
@@ -37,15 +36,11 @@ const Home = (props) => {
 
   const handleUpdatePage = (value) => {
     setPage(value);
-    inputNameEl.current.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
   };
 
   return (
     <>
-      <div className={styles.container} ref={containerEL}>
+      <div className={styles.container}>
         <Text type={"title"}>Busca de personagens</Text>
         <div className={styles.containerInput}>
           <Text type={"subtitle"}>Nome do personagem</Text>
