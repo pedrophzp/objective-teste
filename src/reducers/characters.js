@@ -32,7 +32,7 @@ export const actionCreators = {
         },
       });
 
-      console.log(response);
+      // console.log(response);
 
       if (response.data.code === 200) {
         dispatch({
@@ -46,7 +46,7 @@ export const actionCreators = {
         throw new Error(response.data.message);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
     dispatch({ type: types.LOAD, payload: false });
@@ -69,7 +69,7 @@ export const actionCreators = {
         },
       });
 
-      console.log(response);
+      // console.log(response);
 
       if (response.data.code === 200) {
         dispatch({
@@ -82,7 +82,7 @@ export const actionCreators = {
         throw new Error(response.data.message);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
     dispatch({ type: types.LOAD, payload: false });
