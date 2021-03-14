@@ -6,3 +6,9 @@ body {
 p, h1, h2, h3, h4, span, b {
   margin: 0;
 }
+
+@media (max-width: 767px) {
+  .hideMobile{
+    display: none;
+  }
+}
