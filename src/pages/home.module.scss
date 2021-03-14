@@ -1,0 +1,31 @@
+@import "../styles/colors.scss";
+
+.container {
+  background-color: $dark-snow-color;
+  padding: 40px 113px 24px;
+  display: grid;
+  grid-gap: 16px;
+  align-content: start;
+  overflow: auto;
+}
+
+.containerInput {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.containerCards {
+  display: grid;
+  grid-gap: 8px;
+  padding-bottom: 24px;
+}
+
+.containerCardsTitles{
+    width: 100%;
+    padding: 24px 24px 0 96px;
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+}
