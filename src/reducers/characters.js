@@ -8,6 +8,7 @@ const PRIV_KEY = "93ff54561c21c90ced5354eacf3e9af9d7d75586";
 export const types = {
   LOAD: "LOAD",
   GET_CHARACTERS: "GET_CHARACTERS",
+  GET_CHARACTER: "GET_CHARACTER",
 };
 
 export const actionCreators = {
@@ -50,13 +51,50 @@ export const actionCreators = {
 
     dispatch({ type: types.LOAD, payload: false });
   },
+
+  getCharacterInfo: (id) => async (dispatch, getState) => {
+    try {
+      dispatch({ type: types.LOAD, payload: true });
+
+      let response = await axios({
+        url: `http://gateway.marvel.com:80/v1/public/characters/${id}`,
+        method: "GET",
+        headers: {
+          Accept: "*/*",
+        },
+        params: {
+          apikey: PUBLIC_KEY,
+          ts: timestamp,
+          hash: md5(timestamp + PRIV_KEY + PUBLIC_KEY).toString(),
+        },
+      });
+
+      console.log(response);
+
+      if (response.data.code === 200) {
+        dispatch({
+          type: types.GET_CHARACTER,
+          payload: {
+            character: response.data.data.results,
+          },
+        });
+      } else {
+        throw new Error(response.data.message);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    dispatch({ type: types.LOAD, payload: false });
+  },
 };
 
 // Initial state of the store
 const initialState = {
   loading: true,
-  characters: null,
+  characters: [],
   totalCharacters: null,
+  character: [],
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -75,6 +113,12 @@ export default (state = initialState, action) => {
         ...state,
         characters: payload.characters,
         totalCharacters: payload.totalCharacters,
+      };
+    }
+    case types.GET_CHARACTER: {
+      return {
+        ...state,
+        character: payload.character,
       };
     }
     default:
